@@ -149,6 +149,7 @@ function cardApresentacao(a,id){
   return `
     <article class="card">
       <h3>${t(a.titulo)}</h3>
+      ${a.autores?`<p class="meta"><span class="autores">${a.autores}</span></p>`:''}
       <p class="meta"><span class="veiculo">${t(a.evento)}</span></p>
       <p class="meta">${local}</p>
       ${links}

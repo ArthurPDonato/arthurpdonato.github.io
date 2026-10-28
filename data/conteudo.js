@@ -54,19 +54,19 @@ const CONTEUDO = {
   publicacoes: [
     {
       titulo: {
-        pt: "Emprego Formal e Desastres Climáticos: evidências das enchentes de 2024 no Rio Grande do Sul",
-        en: "Formal Employment and Climate Disasters: evidence from the 2024 floods in Rio Grande do Sul"
+        pt: "Emprego Formal e Desastres Climáticos: Evidências Causais das Enchentes de 2024 no Rio Grande do Sul",
+        en: "Formal Employment and Climate Disasters: Causal Evidence from the 2024 Floods in Rio Grande do Sul"
       },
-      autores: "Donato, A.",                          // TODO: adicionar co-autores
+      autores: "Donato, A. P.; Fiorentin, A. T. G.; Teixeira, G. S.; Santos, M. V. B.; Brito, T. M.", // confira a autoria da versão aceita
       veiculo: { pt: "Revista Análise Econômica (UFRGS)", en: "Revista Análise Econômica (UFRGS)" },
       ano: "2026",                                    // TODO: confirmar ano
       statusTipo: "aceito",
       status: { pt: "Aceito para publicação", en: "Accepted for publication" },
       resumo: {
-        pt: "Estima o efeito causal das enchentes de maio de 2024 sobre o emprego formal nos municípios gaúchos, usando Synthetic Difference-in-Differences (SDiD) com dados do CAGED.",
-        en: "Estimates the causal effect of the May 2024 floods on formal employment across Rio Grande do Sul municipalities using Synthetic Difference-in-Differences (SDiD) on CAGED data."
+        pt: "Estima os efeitos causais das enchentes de maio de 2024 sobre as admissões em empregos formais nos seis municípios do RS mais severamente atingidos, usando Synthetic Difference-in-Differences (SDiD) como estratégia principal, complementado por TWFE-DiD e Controle Sintético. Os resultados apontam déficit acumulado superior a 2.390 vagas formais ao longo de onze meses, com a heterogeneidade entre municípios mais bem explicada pelo dano produtivo do que pelo residencial.",
+        en: "Estimates the causal effects of the May 2024 floods on formal job admissions in the six hardest-hit municipalities of Rio Grande do Sul, using Synthetic Difference-in-Differences (SDiD) as the main strategy, complemented by TWFE-DiD and Synthetic Control. Results show an accumulated deficit of over 2,390 formal jobs across eleven months, with cross-municipality heterogeneity best explained by productive rather than residential damage."
       },
-      links: { pdf: "", doi: "", codigo: "", slides: "" }   // TODO
+      links: { pdf: "", doi: "", codigo: "", slides: "" }   // versão em anais listada em Apresentações (ENABER 2026)
     }
   ],
 
@@ -110,29 +110,45 @@ const CONTEUDO = {
   apresentacoes: [
     {
       titulo: {
-        pt: "Emprego formal e as enchentes de 2024 no Rio Grande do Sul",
-        en: "Formal employment and the 2024 floods in Rio Grande do Sul"
+        pt: "Emprego Formal e Desastres Climáticos: Evidências Causais das Enchentes de 2024 no Rio Grande do Sul",
+        en: "Formal Employment and Climate Disasters: Causal Evidence from the 2024 Floods in Rio Grande do Sul"
       },
+      autores: "Donato, A. P.; Fiorentin, A. T. G.; Teixeira, G. S.; Santos, M. V. B.; Brito, T. M.",
       evento: {
         pt: "ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
         en: "ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
       },
-      local: "Brasil",                                // TODO: cidade/UF
+      local: "",                                      // adicione cidade/UF se quiser
       ano: "2026",
-      links: { slides: "", pdf: "" }                  // TODO
+      links: { slides: "", pdf: "https://brsa.org.br/wp-content/uploads/Anais/2026/550561.pdf" }
     },
     {
       titulo: {
-        pt: "Targeting de municípios na resposta às enchentes de 2024",
-        en: "Municipality targeting in the response to the 2024 floods"
+        pt: "Emprego Formal e Desastres Climáticos: Evidências Causais das Enchentes de 2024 em Eldorado do Sul e Roca Sales",
+        en: "Formal Employment and Climate Disasters: Causal Evidence from the 2024 Floods in Eldorado do Sul and Roca Sales"
       },
+      autores: "Donato, A. P.; Teixeira, G. S.; Santos, M. V.; Ávila, R.",
       evento: {
-        pt: "25ª Mostra de Produção Universitária (MPU) — FURG",
-        en: "25th University Research Fair (MPU) — FURG"
+        pt: "ANPEC Sul 2025 — Encontro de Economia da Região Sul",
+        en: "ANPEC Sul 2025 — Southern Brazil Economics Meeting"
       },
-      local: "Rio Grande, RS",
+      local: "",
+      ano: "2025",
+      links: { slides: "", pdf: "https://www.anpec.org.br/sul/2025/submissao/files_I/i8-c275f27063e7fd2e94148983ec0e3069.pdf" }
+    },
+    {
+      titulo: {
+        pt: "Royalties do Petróleo e Crescimento Econômico Municipal: o Papel Relativo da Intensidade Fiscal e da Adjacência Costeira",
+        en: "Oil Royalties and Municipal Economic Growth: The Relative Role of Fiscal Intensity and Coastal Adjacency"
+      },
+      autores: "Brito, T. M.; Teixeira, G. S.; Donato, A. P.",
+      evento: {
+        pt: "ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
+        en: "ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
+      },
+      local: "",
       ano: "2026",
-      links: { slides: "", pdf: "" }
+      links: { slides: "", pdf: "https://brsa.org.br/wp-content/uploads/Anais/2026/550584.pdf" }
     }
   ],
 
