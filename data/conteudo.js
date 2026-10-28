@@ -40,11 +40,11 @@ const CONTEUDO = {
     // Deixe "" para ocultar um link.
     links: {
       email:    "arthurdonato19@gmail.com",
-      lattes:   "",                                  // TODO: URL do Currículo Lattes
+      lattes:   "http://lattes.cnpq.br/6945022173220258",
       scholar:  "",                                  // TODO: Google Scholar
-      orcid:    "",                                  // TODO: ORCID
+      orcid:    "https://orcid.org/0009-0003-0267-3444",
       github:   "https://github.com/ArthurPDonato",
-      linkedin: "",                                  // TODO: LinkedIn
+      linkedin: "https://www.linkedin.com/in/arthur-pereira-donato-924734202/",
       cv_pt:    "assets/cv-arthur-donato-pt.pdf",     // coloque o PDF em assets/ (ou deixe "")
       cv_en:    "assets/cv-arthur-donato-en.pdf"
     }
