@@ -1,0 +1,166 @@
+/* =============================================================================
+   Estilo do site acadêmico — Arthur Donato
+   Paleta: azul-marinho profundo + dourado discreto (tom acadêmico sóbrio)
+   ============================================================================= */
+
+:root{
+  --navy:#13243b;
+  --navy-2:#1e3a5f;
+  --ink:#1c2733;
+  --muted:#5a6775;
+  --line:#e3e8ef;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --gold:#b8862b;
+  --gold-soft:#f3ead3;
+  --accent:#2c6e8f;
+  --radius:14px;
+  --shadow:0 2px 10px rgba(19,36,59,.06);
+  --shadow-hover:0 6px 22px rgba(19,36,59,.12);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px;}
+
+/* ---------- NAVBAR ---------- */
+nav.top{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+nav .brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--navy);white-space:nowrap;}
+nav .brand a{color:inherit;}
+nav .links{display:flex;gap:4px;align-items:center;flex-wrap:wrap;}
+nav .links a{
+  color:var(--muted);font-size:.9rem;font-weight:500;padding:7px 11px;border-radius:8px;
+}
+nav .links a:hover{color:var(--navy);background:#eef2f8;text-decoration:none;}
+.lang-toggle{
+  display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-left:6px;
+}
+.lang-toggle button{
+  border:none;background:#fff;color:var(--muted);font-size:.8rem;font-weight:700;
+  padding:6px 12px;cursor:pointer;letter-spacing:.03em;
+}
+.lang-toggle button.active{background:var(--navy);color:#fff;}
+
+/* ---------- HERO ---------- */
+header.hero{
+  background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#eef3f9;padding:56px 0 48px;
+}
+header.hero .wrap{display:flex;gap:34px;align-items:center;flex-wrap:wrap;}
+.hero .foto{
+  width:148px;height:148px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:4px solid rgba(255,255,255,.18);box-shadow:0 8px 26px rgba(0,0,0,.28);background:#24456b;
+}
+.hero .foto-fallback{display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:2.6rem;color:#cdd9e6;font-weight:700;}
+.hero .info{flex:1;min-width:260px;}
+.hero h1{font-family:var(--serif);font-size:2.2rem;margin:0 0 6px;line-height:1.15;}
+.hero .titulo{font-size:1.06rem;color:#d7b96a;font-weight:600;margin:0 0 4px;}
+.hero .afiliacao{font-size:.95rem;color:#b9c7d6;margin:0 0 18px;}
+.hero .social{display:flex;flex-wrap:wrap;gap:9px;}
+.hero .social a{
+  display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.10);
+  color:#eef3f9;padding:8px 13px;border-radius:999px;font-size:.84rem;font-weight:500;
+  border:1px solid rgba(255,255,255,.14);transition:.18s;
+}
+.hero .social a:hover{background:rgba(255,255,255,.2);text-decoration:none;transform:translateY(-1px);}
+.hero .social svg{width:15px;height:15px;fill:currentColor;}
+.hero .cv-btns{margin-top:12px;display:flex;gap:9px;flex-wrap:wrap;}
+.hero .cv-btns a{
+  background:var(--gold);color:#2a2008;font-weight:700;padding:9px 16px;border-radius:999px;font-size:.85rem;
+}
+.hero .cv-btns a:hover{background:#cf9b3c;text-decoration:none;}
+
+/* ---------- SEÇÕES ---------- */
+main{padding:46px 0 20px;}
+section.bloco{margin-bottom:46px;scroll-margin-top:72px;}
+section.bloco > h2{
+  font-family:var(--serif);font-size:1.55rem;color:var(--navy);margin:0 0 4px;
+  display:flex;align-items:center;gap:12px;
+}
+section.bloco > h2::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* bio */
+.sobre-bio{font-size:1.05rem;color:#34404d;margin:10px 0 20px;max-width:760px;}
+.interesses{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.interesses .tag{
+  background:var(--gold-soft);color:#7a5a16;font-size:.82rem;font-weight:600;
+  padding:5px 13px;border-radius:999px;border:1px solid #e7d7af;
+}
+.sub-rotulo{font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);margin:22px 0 8px;}
+
+/* cartões de trabalho */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;margin-bottom:16px;box-shadow:var(--shadow);transition:.18s;
+}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px);}
+.card .card-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap;}
+.card h3{font-size:1.1rem;margin:0 0 6px;color:var(--navy);line-height:1.35;font-family:var(--serif);}
+.card .meta{font-size:.9rem;color:var(--muted);margin:0 0 4px;}
+.card .meta .autores{color:#3b4855;font-weight:600;}
+.card .veiculo{font-style:italic;}
+.card .ano{font-weight:600;}
+
+/* badge de status */
+.badge-status{
+  flex-shrink:0;font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:999px;
+  letter-spacing:.02em;white-space:nowrap;align-self:flex-start;
+}
+.st-aceito  {background:#e5f3ea;color:#1e7e34;border:1px solid #bfe3cb;}
+.st-publicado{background:#e5f3ea;color:#1e7e34;border:1px solid #bfe3cb;}
+.st-working {background:#e7eefb;color:#1e3a5f;border:1px solid #c4d6f2;}
+.st-preparo {background:#fdf2e3;color:#99630c;border:1px solid #f0dcb4;}
+.st-revisao {background:#f1ecf8;color:#6b3fa0;border:1px solid #ddceef;}
+
+/* resumo colapsável */
+.resumo{display:none;margin:12px 0 6px;padding:12px 15px;background:#f6f8fb;border-left:3px solid var(--accent);
+  border-radius:0 8px 8px 0;font-size:.95rem;color:#36424f;}
+.resumo.aberto{display:block;}
+
+/* links do cartão */
+.card-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.card-links button, .card-links a{
+  font-size:.8rem;font-weight:600;padding:6px 13px;border-radius:8px;cursor:pointer;
+  border:1px solid var(--line);background:#fff;color:var(--navy);display:inline-flex;align-items:center;gap:6px;
+}
+.card-links button:hover, .card-links a:hover{background:#eef2f8;text-decoration:none;}
+.card-links .btn-resumo{background:var(--navy);color:#fff;border-color:var(--navy);}
+.card-links .btn-resumo:hover{background:var(--navy-2);}
+
+/* contato */
+.contato-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);}
+.contato-box p{margin:0 0 14px;color:#34404d;}
+.contato-links{display:flex;flex-wrap:wrap;gap:10px;}
+.contato-links a{
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;
+  padding:9px 16px;font-size:.88rem;font-weight:600;color:var(--navy);background:#fbfcfe;
+}
+.contato-links a:hover{background:#eef2f8;text-decoration:none;}
+.contato-links svg{width:16px;height:16px;fill:currentColor;}
+
+footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 40px;text-align:center;
+  color:var(--muted);font-size:.82rem;}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width:640px){
+  nav .brand{font-size:1rem;}
+  nav .links a{padding:6px 8px;font-size:.82rem;}
+  .hero h1{font-size:1.8rem;}
+  header.hero .wrap{gap:22px;}
+  .hero .foto{width:120px;height:120px;}
+  section.bloco > h2{font-size:1.35rem;}
+}

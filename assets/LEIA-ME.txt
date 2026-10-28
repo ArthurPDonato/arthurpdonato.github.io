@@ -1,0 +1,9 @@
+Coloque aqui:
+
+  foto.jpg                   -> sua foto (de preferência quadrada, ex. 400x400)
+  cv-arthur-donato-pt.pdf    -> currículo em português
+  cv-arthur-donato-en.pdf    -> currículo em inglês
+  PDFs de artigos / slides   -> e referencie-os em ../data/conteudo.js
+
+Se a foto não existir, o site mostra automaticamente suas iniciais ("AD")
+num círculo, então o layout não quebra.

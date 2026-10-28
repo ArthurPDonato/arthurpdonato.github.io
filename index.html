@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arthur Donato — Economista</title>
+<meta name="description" content="Arthur Donato — Economista, mestrando em Economia Aplicada (PPGE/FURG). Publicações, working papers e apresentações.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2313243b'/><text x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23d7b96a' text-anchor='middle'>AD</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <div class="brand"><a href="#topo">Arthur Donato</a></div>
+    <div class="links" id="nav-links"></div>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap" id="hero"></div>
+</header>
+
+<main class="wrap">
+  <section class="bloco" id="sobre"></section>
+  <section class="bloco" id="publicacoes"></section>
+  <section class="bloco" id="working"></section>
+  <section class="bloco" id="apresentacoes"></section>
+  <section class="bloco" id="contato"></section>
+</main>
+
+<footer><div class="wrap" id="rodape"></div></footer>
+
+<script src="data/conteudo.js"></script>
+<script>
+/* ---------- ícones SVG (inline, sem dependências externas) ---------- */
+const ICON = {
+  email:'<svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.5l8 5 8-5V6H4zm16 3-8 5-8-5v9h16V9z"/></svg>',
+  github:'<svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4v13h-4V8zm7 0h3.8v1.8h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3-1.9 0-2.2 1.5-2.2 3V21h-4V8z"/></svg>',
+  scholar:'<svg viewBox="0 0 24 24"><path d="M12 2 1 9l11 7 9-5.7V17h2V9L12 2zM5 14.5V18c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.5l-7 4.5-7-4.5z"/></svg>',
+  orcid:'<svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM7.4 17.6H5.6V8.1h1.8v9.5zM6.5 7a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm11.9 6.1c0 2.7-1.7 4.5-4.4 4.5h-3.5V8.1h3.5c2.7 0 4.4 1.8 4.4 5zm-1.9 0c0-2-1-3.3-2.7-3.3h-1.6v6.6h1.6c1.5 0 2.7-1 2.7-3.3z"/></svg>',
+  lattes:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 0 1 0 16 8 8 0 0 1 0-16zm-1 3v6l5 3 .8-1.3L13 14V7h-2z"/></svg>',
+  pdf:'<svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16zm0-6h4v1.5H8V10z"/></svg>'
+};
+
+let lang = localStorage.getItem('site-lang') || 'pt';
+const t  = o => (o && (o[lang] ?? o.pt)) ?? '';
+
+/* ---------- NAV ---------- */
+function renderNav(){
+  const n = CONTEUDO.ui.nav;
+  document.getElementById('nav-links').innerHTML = `
+    <a href="#sobre">${t(n.sobre)}</a>
+    <a href="#publicacoes">${t(n.publicacoes)}</a>
+    <a href="#working">${t(n.working)}</a>
+    <a href="#apresentacoes">${t(n.apresentacoes)}</a>
+    <a href="#contato">${t(n.contato)}</a>
+    <div class="lang-toggle">
+      <button data-l="pt" class="${lang==='pt'?'active':''}">PT</button>
+      <button data-l="en" class="${lang==='en'?'active':''}">EN</button>
+    </div>`;
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.onclick = ()=>{ lang=b.dataset.l; localStorage.setItem('site-lang',lang);
+      document.documentElement.lang = lang==='pt'?'pt-BR':'en'; renderAll(); };
+  });
+}
+
+/* ---------- HERO ---------- */
+function social(p){
+  const L=p.links, out=[];
+  if(L.email)   out.push(`<a href="mailto:${L.email}">${ICON.email}Email</a>`);
+  if(L.scholar) out.push(`<a href="${L.scholar}" target="_blank" rel="noopener">${ICON.scholar}Scholar</a>`);
+  if(L.orcid)   out.push(`<a href="${L.orcid}" target="_blank" rel="noopener">${ICON.orcid}ORCID</a>`);
+  if(L.lattes)  out.push(`<a href="${L.lattes}" target="_blank" rel="noopener">${ICON.lattes}Lattes</a>`);
+  if(L.github)  out.push(`<a href="${L.github}" target="_blank" rel="noopener">${ICON.github}GitHub</a>`);
+  if(L.linkedin)out.push(`<a href="${L.linkedin}" target="_blank" rel="noopener">${ICON.linkedin}LinkedIn</a>`);
+  return out.join('');
+}
+function renderHero(){
+  const p = CONTEUDO.perfil, b = CONTEUDO.ui.botoes;
+  const cv=[];
+  if(p.links.cv_pt) cv.push(`<a href="${p.links.cv_pt}" target="_blank" rel="noopener">${t(b.cv_pt)}</a>`);
+  if(p.links.cv_en) cv.push(`<a href="${p.links.cv_en}" target="_blank" rel="noopener">${t(b.cv_en)}</a>`);
+  const iniciais = p.nome.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+  document.getElementById('hero').innerHTML = `
+    <img class="foto" src="${p.foto}" alt="${p.nome}"
+         onerror="this.outerHTML='<div class=\\'foto foto-fallback\\'>${iniciais}</div>'">
+    <div class="info">
+      <h1>${p.nome}</h1>
+      <p class="titulo">${t(p.titulo)}</p>
+      <p class="afiliacao">${t(p.afiliacao)}</p>
+      <div class="social">${social(p)}</div>
+      ${cv.length?`<div class="cv-btns">${cv.join('')}</div>`:''}
+    </div>`;
+}
+
+/* ---------- SOBRE ---------- */
+function renderSobre(){
+  const p=CONTEUDO.perfil, s=CONTEUDO.ui.secoes;
+  const tags = t(p.interesses).map(i=>`<span class="tag">${i}</span>`).join('');
+  document.getElementById('sobre').innerHTML = `
+    <h2>${lang==='pt'?'Sobre':'About'}</h2>
+    <p class="sobre-bio">${t(p.bio)}</p>
+    <div class="sub-rotulo">${t(s.interesses)}</div>
+    <div class="interesses">${tags}</div>`;
+}
+
+/* ---------- CARTÃO DE TRABALHO ---------- */
+function linksTrabalho(w,id){
+  const b=CONTEUDO.ui.botoes, out=[];
+  if(w.resumo) out.push(`<button class="btn-resumo" onclick="toggleResumo('${id}')">${t(b.resumo)}</button>`);
+  if(w.links?.pdf)    out.push(`<a href="${w.links.pdf}" target="_blank" rel="noopener">${ICON.pdf}${t(b.pdf)}</a>`);
+  if(w.links?.doi)    out.push(`<a href="${w.links.doi}" target="_blank" rel="noopener">${t(b.doi)}</a>`);
+  if(w.links?.slides) out.push(`<a href="${w.links.slides}" target="_blank" rel="noopener">${t(b.slides)}</a>`);
+  if(w.links?.codigo) out.push(`<a href="${w.links.codigo}" target="_blank" rel="noopener">${t(b.codigo)}</a>`);
+  return out.length?`<div class="card-links">${out.join('')}</div>`:'';
+}
+function cardTrabalho(w,id){
+  const st = w.statusTipo?`<span class="badge-status st-${w.statusTipo}">${t(w.status)}</span>`:'';
+  const resumo = w.resumo?`<div class="resumo" id="${id}">${t(w.resumo)}</div>`:'';
+  return `
+    <article class="card">
+      <div class="card-top">
+        <div>
+          <h3>${t(w.titulo)}</h3>
+          <p class="meta"><span class="autores">${w.autores||''}</span></p>
+          <p class="meta"><span class="veiculo">${t(w.veiculo)}</span> · <span class="ano">${w.ano||''}</span></p>
+        </div>
+        ${st}
+      </div>
+      ${resumo}
+      ${linksTrabalho(w,id)}
+    </article>`;
+}
+function renderLista(elId, titulo, itens, prefixo){
+  const el=document.getElementById(elId);
+  if(!itens || !itens.length){ el.innerHTML=''; return; }
+  el.innerHTML = `<h2>${titulo}</h2>` + itens.map((w,i)=>cardTrabalho(w,`${prefixo}-${i}`)).join('');
+}
+
+/* ---------- APRESENTAÇÕES ---------- */
+function cardApresentacao(a,id){
+  const b=CONTEUDO.ui.botoes, out=[];
+  if(a.links?.slides) out.push(`<a href="${a.links.slides}" target="_blank" rel="noopener">${t(b.slides)}</a>`);
+  if(a.links?.pdf)    out.push(`<a href="${a.links.pdf}" target="_blank" rel="noopener">${ICON.pdf}${t(b.pdf)}</a>`);
+  const links = out.length?`<div class="card-links">${out.join('')}</div>`:'';
+  const local = [a.local, a.ano].filter(Boolean).join(' · ');
+  return `
+    <article class="card">
+      <h3>${t(a.titulo)}</h3>
+      <p class="meta"><span class="veiculo">${t(a.evento)}</span></p>
+      <p class="meta">${local}</p>
+      ${links}
+    </article>`;
+}
+function renderApresentacoes(){
+  const el=document.getElementById('apresentacoes'), s=CONTEUDO.ui.secoes;
+  const itens=CONTEUDO.apresentacoes;
+  if(!itens||!itens.length){ el.innerHTML=''; return; }
+  el.innerHTML = `<h2>${t(s.apresentacoes)}</h2>` + itens.map((a,i)=>cardApresentacao(a,`ap-${i}`)).join('');
+}
+
+/* ---------- CONTATO ---------- */
+function renderContato(){
+  const p=CONTEUDO.perfil, s=CONTEUDO.ui.secoes, u=CONTEUDO.ui;
+  document.getElementById('contato').innerHTML = `
+    <h2>${t(s.contato)}</h2>
+    <div class="contato-box">
+      <p>${t(u.contatoTexto)}</p>
+      <div class="contato-links">${social(p)}</div>
+    </div>`;
+}
+
+function toggleResumo(id){ document.getElementById(id)?.classList.toggle('aberto'); }
+
+function renderAll(){
+  const s=CONTEUDO.ui.secoes;
+  renderNav(); renderHero(); renderSobre();
+  renderLista('publicacoes', t(s.publicacoes), CONTEUDO.publicacoes, 'pub');
+  renderLista('working',     t(s.working),     CONTEUDO.workingPapers, 'wp');
+  renderApresentacoes();
+  renderContato();
+  document.getElementById('rodape').innerHTML = `${CONTEUDO.perfil.nome} · ${t(CONTEUDO.ui.rodape)}`;
+}
+
+document.documentElement.lang = lang==='pt'?'pt-BR':'en';
+renderAll();
+</script>
+</body>
+</html>
