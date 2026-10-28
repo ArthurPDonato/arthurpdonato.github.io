@@ -115,11 +115,11 @@ const CONTEUDO = {
       },
       autores: "Donato, A. P.; Fiorentin, A. T. G.; Teixeira, G. S.; Santos, M. V. B.; Brito, T. M.",
       evento: {
-        pt: "ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
-        en: "ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
+        pt: "XXIV ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
+        en: "XXIV ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
       },
-      local: "",                                      // adicione cidade/UF se quiser
-      ano: "2026",
+      local: "Porto Alegre, RS",
+      ano: "21–23/10/2026",
       links: { slides: "", pdf: "https://brsa.org.br/wp-content/uploads/Anais/2026/550561.pdf" }
     },
     {
@@ -129,11 +129,11 @@ const CONTEUDO = {
       },
       autores: "Donato, A. P.; Teixeira, G. S.; Santos, M. V.; Ávila, R.",
       evento: {
-        pt: "ANPEC Sul 2025 — Encontro de Economia da Região Sul",
-        en: "ANPEC Sul 2025 — Southern Brazil Economics Meeting"
+        pt: "XXVIII ANPEC Sul 2025 — Encontro de Economia da Região Sul",
+        en: "XXVIII ANPEC Sul 2025 — Southern Brazil Economics Meeting"
       },
-      local: "",
-      ano: "2025",
+      local: "Porto Alegre, RS",
+      ano: "25–26/09/2025",
       links: { slides: "", pdf: "https://www.anpec.org.br/sul/2025/submissao/files_I/i8-c275f27063e7fd2e94148983ec0e3069.pdf" }
     },
     {
@@ -143,11 +143,11 @@ const CONTEUDO = {
       },
       autores: "Brito, T. M.; Teixeira, G. S.; Donato, A. P.",
       evento: {
-        pt: "ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
-        en: "ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
+        pt: "XXIV ENABER 2026 — Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos",
+        en: "XXIV ENABER 2026 — National Meeting of the Brazilian Association for Regional and Urban Studies"
       },
-      local: "",
-      ano: "2026",
+      local: "Porto Alegre, RS",
+      ano: "21–23/10/2026",
       links: { slides: "", pdf: "https://brsa.org.br/wp-content/uploads/Anais/2026/550584.pdf" }
     }
   ],
